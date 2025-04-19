@@ -36,4 +36,6 @@ There are 3 endpoints:
 
 ## How to run
 
+You need to setup `PAYMENT_PORT` env variable to change default port. By default it runs on 8080 port.
+
 You need just run your binary

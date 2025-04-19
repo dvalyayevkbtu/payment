@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io"
 	"net/http"
 	"os"
@@ -50,7 +51,11 @@ func main() {
 
 	log.Info("Payment service has started.")
 
-	http.ListenAndServe(":8080", nil)
+	port := os.Getenv("PAYMENT_PORT")
+	if port == "" {
+		port = "8080"
+	}
+	http.ListenAndServe(fmt.Sprintf(":%s", port), nil)
 }
 
 func retrievePayment(rw http.ResponseWriter, req *http.Request) {
