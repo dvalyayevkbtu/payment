@@ -1,6 +1,6 @@
 module dvalyayevkbtu/payment
 
-go 1.24.2
+go 1.23.8
 
 require github.com/sirupsen/logrus v1.9.3
 
